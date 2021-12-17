@@ -1,0 +1,3 @@
+spring:
+  profiles:   # 环境在远程获取
+    active: dev # dev表示开发环境 , test 测试环境 ,product  表示生产环境

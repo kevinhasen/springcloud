@@ -1,0 +1,16 @@
+server:
+  port: 4444
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: service-route
+          uri: lb://user-provider #lb=Load Balance,填写集群名
+          predicates: # 当满足这种条件后才会被转发
+            - Path=/user/** # 路由拦截的地址配置（断言）

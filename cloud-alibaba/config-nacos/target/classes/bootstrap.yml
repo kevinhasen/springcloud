@@ -1,0 +1,13 @@
+#系统级别配置文件
+server:
+  port: 3377
+spring:
+  application:
+    name: config-nacos  # 应用程序名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+      config:  # 配置中心取名规则：配置应用名+环境+后缀  config-nacos-dev.yaml
+        server-addr: localhost:8848  #Nacos作为配置中心地址
+        file-extension: yaml  #指定yaml格式的配置 , 从nacos配置中心读取yaml配置文件
